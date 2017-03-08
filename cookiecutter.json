@@ -1,0 +1,11 @@
+{
+  "full_name": "Kevin Wierman",
+  "email": "kwierman@gmail.com",
+  "github_username": "kwierman",
+  "github_group": "{{cookiecutter.github_username}}",
+  "project_name": "Python Project CookieCutter",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+  "project_short_description": "Save the Kevin. Save the World.",
+  "version": "0.1.0",
+  "open_source_license": ["MIT license", "BSD license", "Apache Software License 2.0", "GNU General Public License v3"]
+}
