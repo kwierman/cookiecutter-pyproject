@@ -2,14 +2,15 @@
 # -*- coding: utf-8 -*-
 
 from setuptools import setup
+from setuptools import setup, find_packages
 from pip.req import parse_requirements
+import pip
 
-install_reqs = parse_requirements("requirements.txt")
-reqs = [str(ir.req) for ir in install_reqs]
 
-test_reqs = parse_requirements("requirements.txt")
-test_reqs = [str(ir.req) for ir in test_reqs]
-
+install_reqs = reqs = [str(ir.req) for ir in parse_requirements('requirements.txt',
+    session=pip.download.PipSession())]
+dev_reqs = [str(ir.req) for ir in parse_requirements('requirements_dev.txt',
+    session=pip.download.PipSession())]
 
 {%- set license_classifiers = {
     'MIT license': 'License :: OSI Approved :: MIT License',
