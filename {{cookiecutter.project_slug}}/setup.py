@@ -28,9 +28,7 @@ setup(
     author="{{ cookiecutter.full_name.replace('\"', '\\\"') }}",
     author_email='{{ cookiecutter.email }}',
     url='https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}',
-    packages=[
-        '{{ cookiecutter.project_slug }}',
-    ],
+    packages=find_packages(),
     package_dir={'{{ cookiecutter.project_slug }}':
                  '{{ cookiecutter.project_slug }}'},
     entry_points={
