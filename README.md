@@ -1,6 +1,12 @@
 # cookiecutter-pyproject
 @kwierman's Custom Python Project Boilerplate
 
+## Requirements
+
+~~~ bash
+pip install cookiecutter
+~~~
+
 ## Usage
 
 ~~~ bash
