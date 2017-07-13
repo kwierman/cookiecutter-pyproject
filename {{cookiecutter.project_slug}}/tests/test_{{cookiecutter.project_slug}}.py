@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 """
@@ -7,6 +6,7 @@ test_{{ cookiecutter.project_slug }}
 Tests for `{{ cookiecutter.project_slug }}` module.
 """
 
+import cookiecutter
 import pytest
 import sys
 from contextlib import contextmanager
@@ -29,7 +29,6 @@ def test_content(response):
     """
     # from bs4 import BeautifulSoup
     # assert 'GitHub' in BeautifulSoup(response.content).title.string
-
 
 
 def test_command_line_interface():
