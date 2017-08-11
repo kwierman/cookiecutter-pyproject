@@ -6,7 +6,7 @@ test_{{ cookiecutter.project_slug }}
 Tests for `{{ cookiecutter.project_slug }}` module.
 """
 
-import cookiecutter
+import unittest
 import pytest
 import sys
 from contextlib import contextmanager
