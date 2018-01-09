@@ -8,9 +8,9 @@ import pip
 
 
 install_reqs = reqs = [str(ir.req) for ir in parse_requirements('requirements.txt',
-    session=pip.download.PipSession())]
+    session=pip.download.PipSession()) if ir.req is not None]
 dev_reqs = [str(ir.req) for ir in parse_requirements('requirements_dev.txt',
-    session=pip.download.PipSession())]
+    session=pip.download.PipSession()) if ir.req is not None]
 
 {%- set license_classifiers = {
     'MIT license': 'License :: OSI Approved :: MIT License',
