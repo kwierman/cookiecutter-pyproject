@@ -1,24 +1,31 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""Summary
+
+Attributes:
+    dev_reqs (TYPE): Description
+    install_reqs (TYPE): Description
+"""
 
 from setuptools import setup
 from setuptools import setup, find_packages
-from pip.req import parse_requirements
-import pip
 
 
-install_reqs = reqs = [str(ir.req) for ir in parse_requirements('requirements.txt',
-    session=pip.download.PipSession()) if ir.req is not None]
-dev_reqs = [str(ir.req) for ir in parse_requirements('requirements_dev.txt',
-    session=pip.download.PipSession()) if ir.req is not None]
+def parse_requirements(filename):
+    """load requirements from a pip requirements file 
 
-{%- set license_classifiers = {
-    'MIT license': 'License :: OSI Approved :: MIT License',
-    'BSD license': 'License :: OSI Approved :: BSD License',
-    'ISC license': 'License :: OSI Approved :: ISC License (ISCL)',
-    'Apache Software License 2.0': 'License :: OSI Approved :: Apache Software License',
-    'GNU General Public License v3': 'License :: OSI Approved :: GNU General Public License v3 (GPLv3)'
-} %}
+    Args:
+        filename (TYPE): Description
+
+    Returns:
+        TYPE: Description
+    """
+    lineiter = (line.strip() for line in open(filename))
+    return [line for line in lineiter if line and not line.startswith("#")]
+
+
+install_reqs = reqs = parse_requirements('requirements.txt')
+dev_reqs = parse_requirements("requirements_dev.txt")
 
 setup(
     name='{{ cookiecutter.project_slug }}',
